@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "runtime": "nodejs16"
+  },
+  "hosting": {
+    "rewrites": [{
+      "source": "/p/**", "function": "posts"
+  }],
+    "public": "functions/build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
