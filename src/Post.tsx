@@ -8,7 +8,9 @@ import { title } from 'process';
 function Post() {
   let [title, setTitle] = useState("")
   let [slug, setSlug] = useState("");
+  let [image, setImage] = useState("https://www.arweave.net/elAbIMOD74awWYccK7wkGLmT-1O19Hqrq6aULqb5bo8?ext=gif")
   let [loadB, setLoadB] = useState(false)
+  let [description, setDescription] = useState("")
   useEffect(() => {
     if (loadB){
       return
@@ -29,7 +31,11 @@ function Post() {
         if (docSnap.exists()) {
           console.log("Document data:", docSnap.data());
           title = docSnap.data().title
+          image = docSnap.data().image
+          description = docSnap.data().description
           setTitle(title)
+          setImage(image)
+          setDescription(description)
         
         } else {
           // doc.data() will be undefined in this case
@@ -52,8 +58,10 @@ function Post() {
     return (
       <>
         <main>
+        <img src={image} className="img-fluid" alt="..."/>
+
           <h2>{title}</h2>
-          <p>I believe in you.</p>
+          <p>{description}</p>
         </main>
         <nav>
           <Link to="/about">About</Link>

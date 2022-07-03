@@ -11,5 +11,5 @@
   "compileOnSave": true,
   "include": [
     "src"
-, "lib/build"  ]
+, "lib/build", "index.js"  ]
 }
