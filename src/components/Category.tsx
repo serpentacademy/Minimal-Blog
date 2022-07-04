@@ -18,7 +18,7 @@ function Category() {
         setSlug(slug)
         const getPosts = async () => {
 
-            const q = query(collection(db, "posts"), where(slug.toString(), "==", true));
+            const q = query(collection(db, "posts"), where("category_"+slug.toString(), "==", true));
             posts = []
             setPosts(posts)
             listItems = []
@@ -70,7 +70,7 @@ setLoad(load)
     return (
       <>
        <div>
-<h1>Category: title</h1>
+<h1>Category: {slug}</h1>
 <ul> 
         {posts.map(d => (<a href={"https://serpent.academy/p/"+d.slug } key={d.id}> <li >{d.title}</li></a>))} 
                 </ul>

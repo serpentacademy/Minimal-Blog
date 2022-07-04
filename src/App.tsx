@@ -7,6 +7,8 @@ import Post from './Post'
 import Menu from './Menu'
 import Footer from './Footer';
 import Category from './components/Category';
+import Label from './components/Label';
+import Categories from './components/Categories'
 //import db from './firebase';
 
 
@@ -21,6 +23,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category/*" element={<Category />}/>
+        <Route path="/categories/" element={<Categories />}/>
+
+        <Route path="/label/*" element={<Label />}/>
         <Route path="/p/*" element={<Post />} />
       </Routes>
       <Footer />
