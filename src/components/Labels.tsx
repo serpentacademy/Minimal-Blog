@@ -2,13 +2,13 @@ import {Link} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import { collection, query, where, getDoc, DocumentData, doc } from "firebase/firestore";
 import db from "../firebase"
-function Categories() {
+function Labels() {
 
     let [slug, setSlug] = useState("")
     let [load, setLoad] = useState(false)
     let [posts, setPosts] = useState<any>([])
     let [listItems, setListItems] = useState<any[]>([])
-    let [categories, setCategories] = useState<string[]>([])
+    let [labels, setLabels] = useState<string[]>([])
     
 
     useEffect(() => {
@@ -20,13 +20,13 @@ function Categories() {
         const getPosts = async () => {
 
 
-          const docRef = doc(db, "categories", "list");
+          const docRef = doc(db, "labels", "list");
           const docSnap = await getDoc(docRef);
 
           if (docSnap.exists()) {
             console.log("Document data:", docSnap.data());
             setPosts(docSnap.data());
-            setCategories(docSnap.data()["categories"])
+            setLabels(docSnap.data()["labels"])
 
           } else {
             // doc.data() will be undefined in this case
@@ -64,9 +64,9 @@ setLoad(load)
     return (
       <>
        <div>
-<h1>Categories: </h1>
+<h1>Labels: </h1>
 <ul> 
-        {categories.map(d => (<a href={"/category/"+d+"/" } key={d}> <li >{d}</li></a>))} 
+        {labels.map(d => (<a href={"/label/"+d+"/" } key={d}> <li >{d}</li></a>))} 
                 </ul>
 
 
@@ -76,4 +76,4 @@ setLoad(load)
       </>
     );
   }
-  export default Categories;
+  export default Labels;

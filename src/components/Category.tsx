@@ -72,7 +72,7 @@ setLoad(load)
        <div>
 <h1>Category: {slug}</h1>
 <ul> 
-        {posts.map(d => (<a href={"https://serpent.academy/p/"+d.slug } key={d.id}> <li >{d.title}</li></a>))} 
+        {posts.map(d => (<a href={"/p/"+d.slug } key={d.id}> <li >{d.title}</li></a>))} 
                 </ul>
 
 

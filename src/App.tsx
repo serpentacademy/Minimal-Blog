@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Category from './components/Category';
 import Label from './components/Label';
 import Categories from './components/Categories'
+import Labels from './components/Labels'
 //import db from './firebase';
 
 
@@ -24,6 +25,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/*" element={<Category />}/>
         <Route path="/categories/" element={<Categories />}/>
+        <Route path="/labels/" element={<Labels />}/>
+
 
         <Route path="/label/*" element={<Label />}/>
         <Route path="/p/*" element={<Post />} />
