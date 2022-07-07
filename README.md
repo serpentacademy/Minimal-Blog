@@ -3,7 +3,8 @@
 
 <h2>INSTRUCTIONS</h2>
 <h3>Firebase Firestore security rules</h3><br />
-<code>rules_version = '2';
+<pre>
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
@@ -23,4 +24,4 @@ service cloud.firestore {
     }
    
   }
-}</code>
+}</pre>
