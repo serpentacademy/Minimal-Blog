@@ -2,7 +2,7 @@
 <a href ="https://serpent.academy">Serpent Academy</a>
 
 <h2>INSTRUCTIONS</h2>
-<h3>Firebase Firestore security rules<h/3>
+<h3>Firebase Firestore security rules</h3><br />
 <code>rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
